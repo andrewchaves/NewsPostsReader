@@ -7,11 +7,22 @@
 
 import UIKit
 
-class MainPageViewController: UIViewController {
-
+class NewsPageViewController: UIViewController {
+    
+    private var pageTitle: String
+    
+    init (pageTitle: String) {
+        self.pageTitle = pageTitle
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .orange
+        self.title = pageTitle
         
         let api = Service()
         
@@ -21,7 +32,6 @@ class MainPageViewController: UIViewController {
                 print("Result: \(posts)")
             }catch let error as APIError {
                 switch error {
-                    
                 case .invalidURL:
                     print("Invalid URL")
                 case .networkError(_):

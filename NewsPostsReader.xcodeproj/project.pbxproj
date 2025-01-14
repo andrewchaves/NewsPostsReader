@@ -10,10 +10,11 @@
 		876ACFD92D31E1DD0012C065 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 876ACFD22D31E1DD0012C065 /* Assets.xcassets */; };
 		876ACFDB2D31E1DD0012C065 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 876ACFD52D31E1DD0012C065 /* LaunchScreen.storyboard */; };
 		876ACFDC2D31E1DD0012C065 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ACFD12D31E1DD0012C065 /* AppDelegate.swift */; };
-		876ACFDD2D31E1DD0012C065 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ACFD62D31E1DD0012C065 /* MainPageViewController.swift */; };
+		876ACFDD2D31E1DD0012C065 /* NewsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ACFD62D31E1DD0012C065 /* NewsPageViewController.swift */; };
 		876ACFDE2D31E1DD0012C065 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ACFD72D31E1DD0012C065 /* SceneDelegate.swift */; };
 		876ACFE42D31E31F0012C065 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ACFE32D31E3170012C065 /* Service.swift */; };
 		876ACFE62D320B250012C065 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ACFE52D320B1B0012C065 /* Post.swift */; };
+		876ACFE92D35ECAF0012C065 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ACFE82D35EC940012C065 /* MainTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,10 +42,11 @@
 		876ACFD22D31E1DD0012C065 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		876ACFD32D31E1DD0012C065 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		876ACFD42D31E1DD0012C065 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		876ACFD62D31E1DD0012C065 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		876ACFD62D31E1DD0012C065 /* NewsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPageViewController.swift; sourceTree = "<group>"; };
 		876ACFD72D31E1DD0012C065 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		876ACFE32D31E3170012C065 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		876ACFE52D320B1B0012C065 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		876ACFE82D35EC940012C065 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -139,7 +141,7 @@
 		876ACFE12D31E1FA0012C065 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				876ACFD62D31E1DD0012C065 /* MainPageViewController.swift */,
+				876ACFE72D35EC840012C065 /* Controllers */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -150,6 +152,15 @@
 				876ACFE32D31E3170012C065 /* Service.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		876ACFE72D35EC840012C065 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				876ACFE82D35EC940012C065 /* MainTabBarController.swift */,
+				876ACFD62D31E1DD0012C065 /* NewsPageViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,7 +308,8 @@
 			files = (
 				876ACFDC2D31E1DD0012C065 /* AppDelegate.swift in Sources */,
 				876ACFE42D31E31F0012C065 /* Service.swift in Sources */,
-				876ACFDD2D31E1DD0012C065 /* MainPageViewController.swift in Sources */,
+				876ACFDD2D31E1DD0012C065 /* NewsPageViewController.swift in Sources */,
+				876ACFE92D35ECAF0012C065 /* MainTabBarController.swift in Sources */,
 				876ACFDE2D31E1DD0012C065 /* SceneDelegate.swift in Sources */,
 				876ACFE62D320B250012C065 /* Post.swift in Sources */,
 			);
