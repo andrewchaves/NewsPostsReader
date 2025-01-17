@@ -15,6 +15,14 @@ class MainTabBarController: UITabBarController {
         self.view.backgroundColor = .orange
         tabBar.tintColor = .gray
         tabBar.unselectedItemTintColor = .black
+        
+        let loadingViewController = UIViewController()
+        loadingViewController.tabBarItem = UITabBarItem(title: "Loading...",
+                                                       image: nil,
+                                                       tag: 0)
+        loadingViewController.tabBarItem.isEnabled = false
+        self.viewControllers = [loadingViewController]
+        
         configBindings()
         postVM.fetchNewsPosts()
     }
@@ -24,6 +32,7 @@ class MainTabBarController: UITabBarController {
 extension MainTabBarController {
     func configTabBar() {
         DispatchQueue.main.async {
+            self.viewControllers = []
             let allPageViewController = NewsPageViewController(pageTitle: "All")
             let allPageNavController = UINavigationController(rootViewController: allPageViewController)
             allPageNavController.navigationBar.prefersLargeTitles = true

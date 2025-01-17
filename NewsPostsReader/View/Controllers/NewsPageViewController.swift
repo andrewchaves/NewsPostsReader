@@ -23,7 +23,9 @@ class NewsPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = pageTitle
-        
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [
+            .foregroundColor: UIColor.white
+        ]
     }
 
 
