@@ -16,6 +16,7 @@
 		876ACFE62D320B250012C065 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ACFE52D320B1B0012C065 /* Post.swift */; };
 		876ACFE92D35ECAF0012C065 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ACFE82D35EC940012C065 /* MainTabBarController.swift */; };
 		876ACFF22D371DCB0012C065 /* PostsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876ACFF12D371DC40012C065 /* PostsVM.swift */; };
+		87F139782D3C991E00766399 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F139772D3C991E00766399 /* PostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		876ACFE52D320B1B0012C065 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		876ACFE82D35EC940012C065 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		876ACFF12D371DC40012C065 /* PostsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsVM.swift; sourceTree = "<group>"; };
+		87F139772D3C991E00766399 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -144,6 +146,7 @@
 		876ACFE12D31E1FA0012C065 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				87F139762D3B045A00766399 /* Cells */,
 				876ACFE72D35EC840012C065 /* Controllers */,
 			);
 			path = View;
@@ -164,6 +167,14 @@
 				876ACFD62D31E1DD0012C065 /* NewsPageViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		87F139762D3B045A00766399 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				87F139772D3C991E00766399 /* PostTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +327,7 @@
 				876ACFDE2D31E1DD0012C065 /* SceneDelegate.swift in Sources */,
 				876ACFF22D371DCB0012C065 /* PostsVM.swift in Sources */,
 				876ACFE62D320B250012C065 /* Post.swift in Sources */,
+				87F139782D3C991E00766399 /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

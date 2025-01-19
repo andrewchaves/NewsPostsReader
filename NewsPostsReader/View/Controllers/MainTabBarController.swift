@@ -33,31 +33,31 @@ extension MainTabBarController {
     func configTabBar() {
         DispatchQueue.main.async {
             self.viewControllers = []
-            let allPageViewController = NewsPageViewController(pageTitle: "All")
+            let allPageViewController = NewsPageViewController(pageTitle: "All", posts: self.postVM.posts ?? [])
             let allPageNavController = UINavigationController(rootViewController: allPageViewController)
             allPageNavController.navigationBar.prefersLargeTitles = true
             allPageNavController.tabBarItem = UITabBarItem(title: "All",
                                                            image: UIImage(systemName: "newspaper"),
                                                            tag: 0)
-            let worldPageViewController = NewsPageViewController(pageTitle: "Mundo")
+            let worldPageViewController = NewsPageViewController(pageTitle: "Mundo", posts: self.postVM.posts ?? [])
             let worldPageNavController = UINavigationController(rootViewController: worldPageViewController)
             worldPageNavController.navigationBar.prefersLargeTitles = true
             worldPageNavController.tabBarItem = UITabBarItem(title: "Mundo",
                                                              image: UIImage(systemName: "globe.americas"),
                                                              tag: 1)
-            let politicsPageViewController = NewsPageViewController(pageTitle: "Política")
+            let politicsPageViewController = NewsPageViewController(pageTitle: "Política", posts: self.postVM.posts ?? [])
             let politicsPageNavController = UINavigationController(rootViewController: politicsPageViewController)
             politicsPageNavController.navigationBar.prefersLargeTitles = true
             politicsPageNavController.tabBarItem = UITabBarItem(title: "Politica",
                                                                 image: UIImage(systemName: "pencil"),
                                                                 tag: 2)
-            let techPageViewController = NewsPageViewController(pageTitle: "Tecnologia")
+            let techPageViewController = NewsPageViewController(pageTitle: "Tecnologia", posts: self.postVM.posts ?? [])
             let techPageNavController = UINavigationController(rootViewController: techPageViewController)
             techPageNavController.navigationBar.prefersLargeTitles = true
             techPageNavController.tabBarItem = UITabBarItem(title: "Tecnologia",
                                                             image: UIImage(systemName: "newspaper"),
                                                             tag: 3)
-            let financesPageViewController = NewsPageViewController(pageTitle: "Finanças")
+            let financesPageViewController = NewsPageViewController(pageTitle: "Finanças", posts: self.postVM.posts ?? [])
             let financesPageNavController = UINavigationController(rootViewController: financesPageViewController)
             financesPageNavController.navigationBar.prefersLargeTitles = true
             financesPageNavController.tabBarItem = UITabBarItem(title: "Finanças",
