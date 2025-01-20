@@ -17,22 +17,16 @@ class PostTableViewCell: UITableViewCell {
         return label
     }()
     
-    var postContentView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 10.0
-        view.layer.shadowColor = UIColor.lightGray.cgColor
-        return view
-    }()
-    
     var contentTextView: UITextView = {
-        let textField = UITextView()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.font = UIFont.systemFont(ofSize: 22)
-        textField.textColor = .black
-        textField.isUserInteractionEnabled = false
-        return textField
+        let textView = UITextView()
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.font = UIFont.systemFont(ofSize: 22)
+        textView.textColor = .black
+        textView.isUserInteractionEnabled = false
+        textView.isScrollEnabled = false
+        textView.layer.cornerRadius = 10.0
+        textView.layer.shadowColor = UIColor.gray.cgColor
+        return textView
     }()
     
     var authorLabel: UILabel = {
@@ -55,11 +49,22 @@ class PostTableViewCell: UITableViewCell {
     //MARK: Cell configuration
     
     func setupViews() {
-        contentView.backgroundColor = .clear
+        self.backgroundColor = .clear
+        self.selectionStyle = .none
         contentView.addSubview(headlineLabel)
-        postContentView.addSubview(contentTextView)
-        contentView.addSubview(postContentView)
+        contentView.addSubview(contentTextView)
         contentView.addSubview(authorLabel)
+       
+        NSLayoutConstraint.activate([
+            headlineLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            contentTextView.topAnchor.constraint(equalTo: headlineLabel.bottomAnchor, constant: 16),
+            contentTextView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+            contentTextView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+            authorLabel.topAnchor.constraint(equalTo: contentTextView.bottomAnchor, constant: 16),
+            authorLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            authorLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
+        ])
+        
     }
     
     func fillContent( headlineLabel: String,

@@ -36,16 +36,20 @@ class NewsPageViewController: UIViewController {
         
         postsTableView.delegate = self
         postsTableView.dataSource = self
-        
         postsTableView.register(PostTableViewCell.self, forCellReuseIdentifier: "cell")
+        postsTableView.reloadData()
+    
         setupViews()
     }
     
     //MARK: layout
     
     func setupViews() {
-        postsTableView.backgroundColor = .clear
         self.view.addSubview(postsTableView)
+        postsTableView.rowHeight = UITableView.automaticDimension
+        postsTableView.estimatedRowHeight = 120
+        postsTableView.separatorStyle = .none
+        postsTableView.backgroundColor = .clear
         
         NSLayoutConstraint.activate([
             postsTableView.topAnchor.constraint(equalTo: view.topAnchor),
