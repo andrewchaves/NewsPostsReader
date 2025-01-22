@@ -49,6 +49,19 @@ class NewsPageViewController: UIViewController {
     //MARK: layout
     
     func setupViews() {
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor.orange
+        appearance.largeTitleTextAttributes = [
+            .foregroundColor: UIColor.white,
+            .font: UIFont.systemFont(ofSize: 42, weight: .bold)
+        ]
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
         self.view.addSubview(postsTableView)
         postsTableView.rowHeight = UITableView.automaticDimension
         postsTableView.estimatedRowHeight = 120

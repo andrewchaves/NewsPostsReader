@@ -13,8 +13,15 @@ class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         self.view.backgroundColor = .orange
-        tabBar.tintColor = .gray
-        tabBar.unselectedItemTintColor = .black
+
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithOpaqueBackground()
+        tabBarAppearance.backgroundColor = UIColor.orange
+        tabBarAppearance.stackedLayoutAppearance.normal.iconColor = UIColor.black
+        tabBarAppearance.stackedLayoutAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.black]
+        tabBarAppearance.stackedLayoutAppearance.selected.iconColor = UIColor.gray
+        tabBarAppearance.stackedLayoutAppearance.selected.titleTextAttributes = [.foregroundColor: UIColor.gray]
+        tabBar.standardAppearance = tabBarAppearance
         
         let loadingViewController = UIViewController()
         loadingViewController.tabBarItem = UITabBarItem(title: "Loading...",

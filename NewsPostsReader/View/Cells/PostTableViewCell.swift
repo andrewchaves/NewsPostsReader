@@ -12,7 +12,7 @@ class PostTableViewCell: UITableViewCell {
     var headlineLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 22)
+        label.font = UIFont.systemFont(ofSize: 24)
         label.textColor = .gray
         return label
     }()
@@ -20,7 +20,7 @@ class PostTableViewCell: UITableViewCell {
     var contentTextView: UITextView = {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.font = UIFont.systemFont(ofSize: 22)
+        textView.font = UIFont.systemFont(ofSize: 14)
         textView.textColor = .black
         textView.isUserInteractionEnabled = false
         textView.isScrollEnabled = false
@@ -33,7 +33,7 @@ class PostTableViewCell: UITableViewCell {
     var authorLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 22)
+        label.font = UIFont.systemFont(ofSize: 10)
         label.textColor = .white
         return label
     }()
@@ -58,8 +58,9 @@ class PostTableViewCell: UITableViewCell {
        
         NSLayoutConstraint.activate([
             headlineLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            headlineLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             contentTextView.topAnchor.constraint(equalTo: headlineLabel.bottomAnchor, constant: 16),
-            contentTextView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+            contentTextView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             contentTextView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             authorLabel.topAnchor.constraint(equalTo: contentTextView.bottomAnchor, constant: 16),
             authorLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
