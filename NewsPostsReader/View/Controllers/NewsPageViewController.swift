@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import Foundation
 
 class NewsPageViewController: UIViewController {
     private var pageTitle: String
     private var posts: [Post]
+    private var category: Category?
+    private var categorizidedPosts: [Post] = []
     
     private let postsTableView: UITableView = {
         let tableView = UITableView()
@@ -17,9 +20,10 @@ class NewsPageViewController: UIViewController {
         return tableView
     }()
     
-    init (pageTitle: String, posts: [Post]) {
+    init (pageTitle: String, posts: [Post], category: Category? = nil) {
         self.pageTitle = pageTitle
         self.posts = posts
+        self.category = category
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -37,9 +41,9 @@ class NewsPageViewController: UIViewController {
         postsTableView.delegate = self
         postsTableView.dataSource = self
         postsTableView.register(PostTableViewCell.self, forCellReuseIdentifier: "cell")
-        postsTableView.reloadData()
-    
+        
         setupViews()
+        generateCategorizedPosts()
     }
     
     //MARK: layout
@@ -58,13 +62,26 @@ class NewsPageViewController: UIViewController {
             postsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
+    
+    func generateCategorizedPosts() {
+        guard let _ = self.category else {
+            categorizidedPosts = posts
+            return
+        }
+        posts.forEach { post in
+            if post.category == self.category {
+                categorizidedPosts.append(post)
+            }
+        }
+        postsTableView.reloadData()
+    }
 }
 
 //MARK: Table View Methods
 extension NewsPageViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        posts.count
+        categorizidedPosts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -72,9 +89,9 @@ extension NewsPageViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.fillContent(headlineLabel: posts[indexPath.row].headline,
-                         contentTextView: posts[indexPath.row].content,
-                         authorLabel: posts[indexPath.row].author)
+        cell.fillContent(headlineLabel: categorizidedPosts[indexPath.row].headline,
+                         contentTextView: categorizidedPosts[indexPath.row].content,
+                         authorLabel: categorizidedPosts[indexPath.row].author)
         
         return cell
     }

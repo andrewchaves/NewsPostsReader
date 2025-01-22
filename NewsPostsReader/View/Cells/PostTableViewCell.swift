@@ -26,6 +26,7 @@ class PostTableViewCell: UITableViewCell {
         textView.isScrollEnabled = false
         textView.layer.cornerRadius = 10.0
         textView.layer.shadowColor = UIColor.gray.cgColor
+        textView.backgroundColor = .clear
         return textView
     }()
     
