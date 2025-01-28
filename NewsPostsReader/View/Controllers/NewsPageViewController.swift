@@ -67,6 +67,7 @@ class NewsPageViewController: UIViewController {
         postsTableView.estimatedRowHeight = 120
         postsTableView.separatorStyle = .none
         postsTableView.backgroundColor = .clear
+        postsTableView.showsVerticalScrollIndicator = false
         
         NSLayoutConstraint.activate([
             postsTableView.topAnchor.constraint(equalTo: view.topAnchor),
